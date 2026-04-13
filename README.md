@@ -17,6 +17,6 @@ Installs and enables nginx
 
 ## Requirements 
 For Debian systems 
-11 - bullseye
-12 -bookworm
+11 bullseye,
+12 bookworm,
 13 trixie
