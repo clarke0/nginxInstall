@@ -22,6 +22,7 @@ curl -fsSL https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
 FINGERPRINT=$(gpg --dry-run --quiet --no-keyring --import --import-options import-show \
     /usr/share/keyrings/nginx-archive-keyring.gpg | grep -o '[0-9A-F]\{40\}')
 
+# Repository - https://nginx.org/en/linux_packages.html
 EXPECTED="573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62"
 if [ "$FINGERPRINT" != "$EXPECTED" ]; then
     echo "ERROR: Key fingerprint mismatch! Got: $FINGERPRINT"
@@ -29,7 +30,6 @@ if [ "$FINGERPRINT" != "$EXPECTED" ]; then
 fi
 echo "Key verified: $FINGERPRINT"
 
-# Repository - https://nginx.org/en/linux_packages.html
 if [ "$NGINX_BRANCH" = "mainline" ]; then
     REPO_PATH="mainline/debian"
 else
