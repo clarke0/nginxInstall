@@ -1,4 +1,4 @@
-## usage
+## Usage
 run with ./nginx-setup.sh [stable|mainline] 
 
 ## Arguments  
